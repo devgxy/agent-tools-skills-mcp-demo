@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570" role="img" aria-labelledby="title desc">
+  <title id="title">Tools、Skills 与 MCP 工程架构</title>
+  <desc id="desc">宿主把技能说明和工具定义提供给模型，模型返回调用请求。宿主验证身份与参数，经本地工具或 MCP 执行业务能力，把结果交回模型。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#64748b" stroke-width="1.6"/></marker>
+    <style>
+      text{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;fill:#223047;font-size:17px}
+      .title{font-size:25px;font-weight:600}.small{font-size:15px;fill:#526178}.label{font-size:15px}
+      .node{fill:#f3f6fa;stroke:#d3dce8;stroke-width:1.2}.host{fill:#eaf2ff;stroke:#90b4e8;stroke-width:1.4}
+      .edge{fill:none;stroke:#64748b;stroke-width:1.6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="960" height="570" fill="#ffffff"/>
+  <text x="36" y="45" class="title">模型决定调用，宿主执行，MCP 标准化连接</text>
+  <rect x="30" y="81" width="180" height="85" rx="9" class="node"/>
+  <text x="120" y="114" text-anchor="middle">Skill 技能目录</text>
+  <text x="120" y="141" text-anchor="middle" class="small">说明、脚本、参考资料</text>
+  <rect x="350" y="80" width="220" height="90" rx="9" class="host"/>
+  <text x="460" y="114" text-anchor="middle">Agent 宿主运行时</text>
+  <text x="460" y="142" text-anchor="middle" class="small">上下文、任务状态、调用循环</text>
+  <rect x="750" y="81" width="180" height="85" rx="9" class="node"/>
+  <text x="840" y="114" text-anchor="middle">模型服务</text>
+  <text x="840" y="141" text-anchor="middle" class="small">生成回答或调用请求</text>
+  <path d="M210 125 L350 125" class="edge" stroke-dasharray="5 4"/>
+  <text x="280" y="105" text-anchor="middle" class="label">按需读取</text>
+  <path d="M570 110 L750 110" class="edge"/>
+  <text x="660" y="98" text-anchor="middle" class="label">任务 + 工具定义</text>
+  <path d="M750 152 L570 152" class="edge"/>
+  <text x="660" y="183" text-anchor="middle" class="label">调用请求 / 最终文本</text>
+  <path d="M460 170 L460 237" class="edge"/>
+  <text x="483" y="212" class="label">执行前验证</text>
+  <rect x="315" y="240" width="290" height="66" rx="9" class="host"/>
+  <text x="460" y="269" text-anchor="middle">工具范围 + 参数 + 身份 + 授权</text>
+  <text x="460" y="292" text-anchor="middle" class="small">约束由代码和业务服务实施</text>
+  <path d="M365 306 L225 361" class="edge"/>
+  <path d="M555 306 L695 361" class="edge"/>
+  <rect x="105" y="363" width="240" height="70" rx="9" class="node"/>
+  <text x="225" y="392" text-anchor="middle">本地函数 / 业务 SDK</text>
+  <text x="225" y="415" text-anchor="middle" class="small">直接调用具体业务实现</text>
+  <rect x="545" y="363" width="320" height="70" rx="9" class="node"/>
+  <text x="705" y="392" text-anchor="middle">MCP Client → MCP Server</text>
+  <text x="705" y="415" text-anchor="middle" class="small">标准协议发现与调用能力</text>
+  <path d="M225 433 L365 479" class="edge"/>
+  <path d="M705 433 L555 479" class="edge"/>
+  <rect x="315" y="480" width="290" height="58" rx="9" class="node"/>
+  <text x="460" y="515" text-anchor="middle">数据库 / 内部服务 / 外部 API</text>
+  <path d="M105 399 L70 399 L70 275 L315 275" class="edge"/>
+  <text x="170" y="255" text-anchor="middle" class="label">结果回传</text>
+  <path d="M865 399 L912 399 L912 275 L605 275" class="edge"/>
+  <text x="767" y="255" text-anchor="middle" class="label">结果回传</text>
+  <path d="M345 240 L290 240 L290 190 L390 190 L390 170" class="edge"/>
+  <text x="170" y="208" class="small">结果交回宿主</text>
+</svg>
